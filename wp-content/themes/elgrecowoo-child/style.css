@@ -16,6 +16,133 @@
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Mega Menu Styles
+# General Styles
+# Header Styles
+# Home Page Styles
+# Footer Styles
+# Responsive Styles
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
+# General Styles
+--------------------------------------------------------------*/
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/*--------------------------------------------------------------
+# Header Styles
+--------------------------------------------------------------*/
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px 0;
+}
+
+.site-branding .site-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #007bff;
+}
+
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.main-navigation a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/*--------------------------------------------------------------
+# Home Page Styles
+--------------------------------------------------------------*/
+.home-section {
+    padding: 60px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.home-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.home-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.home-section p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-md-3, .col-md-6 {
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.col-md-3 {
+    width: 25%;
+}
+
+.col-md-6 {
+    width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Responsive Styles
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+    .col-md-3, .col-md-6 {
+        width: 100%;
+    }
+
+    .header-main {
+        flex-direction: column;
+    }
+
+    .main-navigation {
+        margin-top: 15px;
+    }
+
+    .main-navigation li {
+        display: block;
+        margin: 10px 0;
+    }
+}
