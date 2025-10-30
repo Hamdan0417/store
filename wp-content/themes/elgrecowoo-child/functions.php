@@ -194,37 +194,8 @@ if ( ! function_exists( 'elgreco_child_setup_categories' ) ) {
 // Run the category setup function on theme initialization.
 add_action( 'init', 'elgreco_child_setup_categories', 20 );
 
-function cheasy_register_nav_menu(){
-    register_nav_menus( array(
-        'primary_menu' => __( 'Primary Menu', 'elgrecowoo-child' ),
-    ) );
+function cheasy_enqueue_scripts() {
+    wp_enqueue_script( 'ethers', 'https://cdn.ethers.io/lib/ethers-5.2.umd.min.js', array(), null, true );
+    wp_enqueue_script( 'cheasy-web3', get_stylesheet_directory_uri() . '/js/web3.js', array( 'ethers' ), time(), true );
 }
-add_action( 'after_setup_theme', 'cheasy_register_nav_menu' );
-
-// SEO Meta Tags
-function cheasy_seo_meta_tags() {
-    if ( is_front_page() ) {
-        ?>
-        <title>CHEASY - Web3 E-commerce Ecosystem</title>
-        <meta name="description" content="Building the future of e-commerce with Web3.">
-        <?php
-    }
-}
-add_action( 'wp_head', 'cheasy_seo_meta_tags' );
-
-// Enable DePay Payment Gateway
-function cheasy_enable_depay_gateway( $gateways ) {
-    $gateways[] = 'DePay_WC_Payments_Gateway';
-    return $gateways;
-}
-add_filter( 'woocommerce_payment_gateways', 'cheasy_enable_depay_gateway' );
-
-function cheasy_activate_depay() {
-    $depay_options = get_option( 'woocommerce_depay_wc_payments_settings' );
-    if ( ! $depay_options ) {
-        $depay_options = array();
-    }
-    $depay_options['enabled'] = 'yes';
-    update_option( 'woocommerce_depay_wc_payments_settings', $depay_options );
-}
-add_action( 'init', 'cheasy_activate_depay' );
+add_action( 'wp_enqueue_scripts', 'cheasy_enqueue_scripts' );

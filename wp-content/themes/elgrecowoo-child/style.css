@@ -15,10 +15,10 @@
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Mega Menu Styles
 # General Styles
 # Header Styles
 # Home Page Styles
+# White Paper & FAQ Styles
 # Footer Styles
 # Responsive Styles
 --------------------------------------------------------------*/
@@ -29,13 +29,14 @@
 body {
     font-family: 'Inter', sans-serif;
     color: #333;
-    line-height: 1.6;
-    background-color: #f8f9fa;
+    line-height: 1.8;
+    background-color: #ffffff;
 }
 
 a {
     color: #007bff;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -48,62 +49,48 @@ a:hover {
     padding: 0 15px;
 }
 
+h1, h2, h3 {
+    font-weight: 700;
+}
+
 /*--------------------------------------------------------------
 # Header Styles
 --------------------------------------------------------------*/
 .header {
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 15px 0;
-}
-
-.site-branding .site-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #007bff;
-}
-
-.main-navigation ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.main-navigation li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-.main-navigation a {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 20px 0;
 }
 
 /*--------------------------------------------------------------
 # Home Page Styles
 --------------------------------------------------------------*/
 .home-section {
-    padding: 60px 0;
-    border-bottom: 1px solid #eee;
+    padding: 80px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.home-section:last-child {
+    border-bottom: none;
 }
 
 .home-section h1 {
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 52px;
+    text-align: center;
     margin-bottom: 20px;
 }
 
 .home-section h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 30px;
+    font-size: 40px;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .home-section p {
     font-size: 18px;
-    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
 }
 
 .row {
@@ -112,37 +99,43 @@ a:hover {
     margin: 0 -15px;
 }
 
-.col-md-3, .col-md-6 {
+.col-md-3 {
+    width: 25%;
     padding: 0 15px;
     margin-bottom: 30px;
 }
 
-.col-md-3 {
-    width: 25%;
+/*--------------------------------------------------------------
+# White Paper & FAQ Styles
+--------------------------------------------------------------*/
+.white-paper-content, .faq-content {
+    padding: 80px 0;
 }
 
-.col-md-6 {
-    width: 50%;
+.white-paper-content h1, .faq-content h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.white-paper-content h2, .faq-content h2 {
+    font-size: 32px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 /*--------------------------------------------------------------
 # Responsive Styles
 --------------------------------------------------------------*/
 @media (max-width: 768px) {
-    .col-md-3, .col-md-6 {
+    .col-md-3 {
         width: 100%;
     }
 
-    .header-main {
-        flex-direction: column;
+    .home-section h1 {
+        font-size: 36px;
     }
 
-    .main-navigation {
-        margin-top: 15px;
-    }
-
-    .main-navigation li {
-        display: block;
-        margin: 10px 0;
+    .home-section h2 {
+        font-size: 28px;
     }
 }
